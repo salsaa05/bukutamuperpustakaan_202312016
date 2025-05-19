@@ -22,7 +22,6 @@ include 'koneksi.php';
             margin: 0 auto;
             border-collapse: collapse;
             background-color: #fff;
-            box-shadow: 0 4px 10px rgba(126, 87, 194, 0.1);
         }
         th, td {
             padding: 12px 15px;
@@ -39,6 +38,21 @@ include 'koneksi.php';
         tr:hover {
             background-color: #e9d7f7;
         }
+        .back-link {
+        text-align: right;
+        width: 80%;
+        margin: 20px auto 0;
+        }
+        .back-link a {
+            text-decoration: none;
+            background-color: #b39ddb;
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            background-color: #e9d7f7;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +64,7 @@ include 'koneksi.php';
             <th>Keperluan</th>
             <th>Waktu Kunjungan</th>
         </tr>
+</div>
         <?php
         $no = 1;
         $result = mysqli_query($conn, "SELECT * FROM buku_tamu ORDER BY id DESC");
@@ -63,5 +78,8 @@ include 'koneksi.php';
         }
         ?>
     </table>
+
+    <div class="back-link">
+    <a href="index.php">Kembali</a>
 </body>
 </html>
