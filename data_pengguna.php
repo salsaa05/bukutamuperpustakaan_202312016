@@ -1,11 +1,10 @@
 <?php
 include 'koneksi.php';
 
-// Proses input buku tamu
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST['nama'];
     $keperluan = $_POST['keperluan'];
-    $waktu_kunjungan = date('Y-m-d H:i:s'); // Format waktu sekarang
+    $waktu_kunjungan = date('Y-m-d H:i:s');
 
     $query = "INSERT INTO buku_tamu (nama, keperluan, waktu_kunjungan) VALUES ('$nama', '$keperluan', '$waktu_kunjungan')";
     mysqli_query($conn, $query);
@@ -30,9 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 60%;
             margin: 0 auto 40px;
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(155, 89, 182, 0.2);
+            padding: 50px;
         }
         input[type="text"] {
             width: 100%;
@@ -40,37 +37,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-top: 8px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 6px;
         }
         input[type="submit"] {
-            background-color: #9b59b6;
+            background-color: #b39ddb;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 6px;
-            cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: #8e44ad;
+            background-color: #e9d7f7;
         }
-        table {
-            width: 80%;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background-color: #fff;
-            box-shadow: 0 4px 10px rgba(155, 89, 182, 0.2);
+        .button-group {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-top: 10px;
         }
-        th, td {
-            padding: 12px;
-            border: 1px solid #d7cce7;
-            text-align: center;
-        }
-        th {
-            background-color: #9b59b6;
+        .back-button {
+            background-color: #b39ddb;
             color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: normal;
         }
-        tr:hover {
-            background-color: #f2e6f9;
+        .back-button:hover {
+            background-color: #e9d7f7;
         }
     </style>
 </head>
@@ -85,7 +78,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label>Keperluan</label>
     <input type="text" name="keperluan" required>
 
-    <input type="submit" value="Simpan">
+    <div class="button-group">
+        <input type="submit" value="Simpan">
+        <a href="index.php" class="back-button">Kembali</a>
+    </div>
 </form>
 
 </body>
