@@ -32,15 +32,12 @@
             border: 1px solid #d7cce7;
             padding: 20px 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(155, 89, 182, 0.1);
             color: #5e3370;
             font-size: 18px;
-            transition: all 0.3s ease;
         }
         .menu a:hover {
             background-color: #b39ddb;
             color: white;
-            transform: scale(1.05);
         }
     </style>
 </head>
